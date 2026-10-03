@@ -16,7 +16,6 @@ public class Main {
         SoundManager sound = new SoundManager();
         SoundManager sound2 = new SoundManager();
 
-
         String userinput;
         sound.loadsound("C:\\Users\\User\\javaStuff2folder\\javaStuff2\\src\\sounds\\menuSounds\\gabester_fallmountain-menumusic.wav");
         sound2.loadsound("C:\\Users\\User\\javaStuff2folder\\javaStuff2\\src\\sounds\\menuSounds\\select.wav");
