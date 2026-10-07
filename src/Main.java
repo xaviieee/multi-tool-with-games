@@ -2,6 +2,7 @@ import Games.GameMenu;
 import Tools.Calculator;
 import Tools.Temperatureconverter;
 import Tools.Weightconvert;
+import Tools.Notes;
 import sounds.SoundManager;
 
 import java.util.Scanner;
@@ -13,6 +14,9 @@ public class Main {
         Temperatureconverter tempconvert = new  Temperatureconverter();
         GameMenu gameMenu = new GameMenu();
         Weightconvert weight = new Weightconvert();
+        Notes note = new Notes();
+
+        // Sounds
         SoundManager sound = new SoundManager();
         SoundManager sound2 = new SoundManager();
 
@@ -31,14 +35,15 @@ public class Main {
                     "2.] Temperature converter",
                     "3.] Weight converter",
                     "4.] Games",
-                    "5.] Exit"
+                    "5.] Notes",
+                    "6.] Exit"
             };
             for (String choice : choices) {
                 System.out.println(choice);
                 Thread.sleep(500);
             }
             System.out.print(">: ");
-            userinput = input.next();
+            userinput = input.nextLine();
 
             switch (userinput) {
                 case "1":
@@ -66,6 +71,12 @@ public class Main {
                     gameMenu.run();
                     continue;
                 case "5":
+                    sound.stop();
+                    sound2.play();
+                    Thread.sleep(500);
+                    note.run(input);
+                    continue;
+                case "6":
                     System.exit(0);
                 default:
                     System.out.println("Invalid input");
